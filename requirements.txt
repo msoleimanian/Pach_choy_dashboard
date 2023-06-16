@@ -1,4 +1,8 @@
 streamlit
 pandas
 pip == 23.1.2
+st_aggrid
+plotly
+statistics
+warnings
 
