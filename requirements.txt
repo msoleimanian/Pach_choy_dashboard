@@ -1,0 +1,7 @@
+pip
+streamlit
+pandas
+st_aggrid
+plotly
+statistics
+warnings
