@@ -3,5 +3,5 @@ pandas
 pip == 23
 streamlit-aggrid 
 plotly
-mean
+statistics
 warnings
