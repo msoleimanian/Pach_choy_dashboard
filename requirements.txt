@@ -1,6 +1,6 @@
 streamlit
 pandas
-pip == 23.1.2
+pip == 23
 st_aggrid
 plotly
 statistics
