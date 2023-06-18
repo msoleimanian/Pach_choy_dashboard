@@ -1,8 +1,7 @@
 streamlit
 pandas
 pip == 23
-st_aggrid
+streamlit-aggrid 
 plotly
 statistics
 warnings
-
