@@ -1,6 +1,11 @@
 import streamlit as st
 from PIL import Image
 
+import warnings
+warnings.filterwarnings("ignore")
+
+st.set_page_config(layout="wide")
+
 st.header('Pack choy')
 
 st.write(""" Overview:
