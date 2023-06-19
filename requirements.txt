@@ -1,0 +1,7 @@
+streamlit
+pandas
+pip == 23
+streamlit-aggrid 
+plotly 
+pytest-warnings
+statistics
