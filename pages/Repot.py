@@ -12,9 +12,6 @@ warnings.filterwarnings("ignore")
 st.set_page_config(layout="wide")
 
 
-
-
-
 # Functions
 
 def data_upload(path):
