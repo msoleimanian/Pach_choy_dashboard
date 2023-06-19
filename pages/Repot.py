@@ -5,10 +5,6 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 import plotly.express as px
 from statistics import mean
 import matplotlib.pyplot as plt
-import warnings
-warnings.filterwarnings("ignore")
-
-st.set_page_config(layout="wide")
 
 
 # Functions
