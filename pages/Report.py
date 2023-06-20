@@ -6,6 +6,7 @@ import plotly.express as px
 from statistics import mean
 
 
+
 # Functions
 
 def data_upload(path):
