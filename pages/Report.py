@@ -449,7 +449,7 @@ if options == 'Action Plan' :
         print("DataFrame 1 : ")
         print(dataframe1)
 
-        st.markdown(printCostumTitleAndContenth4('Bar Chat',
+        st.markdown(printCostumTitleAndContenth4('The effects of the suggestion',
                                                  f"""The graph below shows the amount of growth metrics of the plot from week 5 to week 8 that is predicted, which is displayed separately by week."""),
                     unsafe_allow_html=True)
         dict1 = dataframe.to_dict()
