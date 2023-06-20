@@ -4,7 +4,7 @@ from st_aggrid import AgGrid, JsCode, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 import plotly.express as px
 from statistics import mean
-import matplotlib.pyplot as plt
+
 
 
 # Functions
@@ -12,9 +12,6 @@ import matplotlib.pyplot as plt
 def data_upload(path):
     dataframe = pd.read_csv(path)
     return dataframe
-
-
-
 
 def printCostumTitleAndContenth3(title, context):
     return f"""
@@ -39,17 +36,20 @@ def printCostumTitleAndContenth4(title, context):
 
 DataFrameAction = 0
 
-
-
 #Main Core
+farm = st.sidebar.selectbox(
+    'Farms',
+    ('Farm1', 'Farm2', 'Farm3' , 'Farm4'))
 
 options = st.sidebar.radio('Sections',
-                           options=('Summary of all plots', 'Action Plan', 'Result of the ActionPlan'))
+                           options=('Summary of all plots', 'Action Plan'))
+
+
 
 # base on the Plot id
 
 if options == 'Summary of all plots':
-    st.header("Summary of Pak Choy greenhouse growth")
+    st.header(f"Summary of Pak Choy growth {farm}")
 
     st.markdown(printCostumTitleAndContenth3('Status of all plots',
                                  'In this section, the growth status of all plots is predicted. The criterion is to compare the predicted weight of each plot and compare it with the target state of each plot. According to this metric, the plots are divided into three general categories that indicate the state of the plot. By selecting each plot, it first displays the graphs related to growth.' ) , unsafe_allow_html=True)
@@ -440,184 +440,34 @@ if options == 'Action Plan' :
         'ActionMg':ActionMg ,
         'ActionCa':ActionCa }
         dataframe7 = pd.DataFrame(Data2)
-        st.markdown(printCostumTitleAndContenth4(f'AcionPlan', 'The table below shows the amount of each nutrient that should be changed. The values are in percentages, and the number that is positive should be added as much as it is in the table, and the number that is negative should be reduced by the same amount.'),unsafe_allow_html=True)
+        st.markdown(printCostumTitleAndContenth4(f'Suggestions', 'The table below shows the amount of each nutrient that should be changed. The values are in percentages, and the number that is positive should be added as much as it is in the table, and the number that is negative should be reduced by the same amount.'),unsafe_allow_html=True)
         st.write(dataframe7)
         DataFrameAction = dataframe7
 
-if options == 'Result of the ActionPlan':
-    st.markdown(printCostumTitleAndContenth3('HIGH RISK PLOTS AND RESULT OF THE ACTION PLAN FOR PLOT',
-                                             'In this section, the plots that had high risk and were given suggestions to the farmer can be seen separately. The graphs show how the crop will be in the last week if the farmer follows the suggestions.'),
-                unsafe_allow_html=True)
-
-    dataframe = data_upload('data_Growth_Plot_Weight.csv')
-    dataframe = dataframe[['Plot', 'RISKLEVEL']].query("""RISKLEVEL == 'High RISK'""")
-
-    dataframe3 = data_upload('data_pack.csv')
-
-#    dataframe3 = dataframe3.query(f'Plot == {plotid}')
-    plot = 0
-    dict1 = dataframe.to_dict()
-    print(dict1)
-    print(dict1['Plot'].keys())
-    dataframe3 = data_upload('data_pack.csv')
-
-    for key  in dict1['Plot']:
-        print(dict1['Plot'][key])
-        dataframe3.query(f"""Plot == {dict1['Plot'][key]}""")
-        dataframe4 = dataframe3[
-            ['week', 'PrepH', 'PreSoilMoisture', 'PreN', 'PreP', 'PreEC', 'PreZn', 'PreS', 'PreK', 'PreMg', 'PreCa',
-             'PreTemperature', 'PreHumidity', 'PreLight']]
-        dataframe4 = dataframe4.query(f'week > 4')
-
-        metrics = ['PrepH', 'PreSoilMoisture', 'PreN', 'PreP', 'PreEC', 'PreZn', 'PreS', 'PreK', 'PreMg', 'PreCa',
-                   'PreTemperature', 'PreHumidity', 'PreLight']
-        pH = []
-        SoilMoisture = []
-        N = []
-        P = []
-        EC = []
-        Zn = []
-        S = []
-        K = []
-        Mg = []
-        Ca = []
-
-        ActionpH = []
-        ActionSoilMoisture = []
-        ActionN = []
-        ActionP = []
-        ActionEC = []
-        ActionZn = []
-        ActionS = []
-        ActionK = []
-        ActionMg = []
-        ActionCa = []
-
-        Temperature = []
-        Humidity = []
-        weeks = []
-        BestpH = []
-        BestSoilMoisture = []
-        BestN = []
-        BestP = []
-        BestEC = []
-        BestZn = []
-        BestS = []
-        BestK = []
-        BestMg = []
-        BestCa = []
-        BestTemperature = []
-        BestHumidity = []
-        w = 5
-
-        while w < 9:
-            weeks.append(w)
-            dataframe5 = dataframe4.query(f'week == {w}')
-            pH.append(dataframe5['PrepH'].mean())
-            SoilMoisture.append(dataframe5['PreSoilMoisture'].mean())
-            N.append(dataframe5['PreN'].mean())
-            P.append(dataframe5['PreP'].mean())
-            EC.append(dataframe5['PreEC'].mean())
-            Zn.append(dataframe5['PreZn'].mean())
-            S.append(dataframe5['PreS'].mean())
-            K.append(dataframe5['PreK'].mean())
-            Mg.append(dataframe5['PreMg'].mean())
-            Ca.append(dataframe5['PreCa'].mean())
-            Temperature.append(dataframe5['PreTemperature'].mean())
-            Humidity.append(dataframe5['PreHumidity'].mean())
-
-            BestpH.append(7.5)
-            BestSoilMoisture.append(80)
-            BestN.append(115)
-            BestP.append(132)
-            BestEC.append(4.6)
-            BestZn.append(233)
-            BestS.append(212)
-            BestK.append(321)
-            BestMg.append(312)
-            BestCa.append(2)
-            BestTemperature.append(25)
-            BestHumidity.append(100)
-            w = w + 1
-
-        Data1 = {'week': weeks, 'pH': pH,
-                 'SoilMoisture': SoilMoisture,
-                 'N': N,
-                 'P': P,
-                 'EC': EC,
-                 'Zn': Zn,
-                 'S': S,
-                 'K': K,
-                 'Mg': Mg,
-                 'Ca': Ca,
-                 'Temperature': Temperature,
-                 'Humidity': Humidity,
-                 'weeks': weeks,
-                 'BestpH': BestpH,
-                 'BestSoilMoisture': BestSoilMoisture,
-                 'BestN': BestN,
-                 'BestP': BestP,
-                 'BestEC': BestEC,
-                 'BestZn': BestZn,
-                 'BestS': BestS,
-                 'BestK': BestK,
-                 'BestMg': BestMg,
-                 'BestCa': BestCa,
-                 'BestTemperature': BestTemperature,
-                 'BestHumidity': BestHumidity}
-
-        ActionpH.append(((7 / 10) - (mean(pH) / mean(BestpH))) * 100)
-        ActionSoilMoisture.append(((7 / 10) - (mean(SoilMoisture) / mean(BestSoilMoisture))) * 100)
-        ActionN.append(((7 / 10) - (mean(N) / mean(BestN))) * 100)
-        ActionP.append(((7 / 10) - (mean(P) / mean(BestP))) * 100)
-        ActionEC.append(((7 / 10) - (mean(EC) / mean(BestEC))) * 100)
-        ActionZn.append(((7 / 10) - (mean(Zn) / mean(BestZn))) * 100)
-        ActionS.append(((7 / 10) - (mean(S) / mean(BestS))) * 100)
-        ActionK.append(((7 / 10) - (mean(K) / mean(BestK))) * 100)
-        ActionMg.append(((7 / 10) - (mean(Mg) / mean(BestMg))) * 100)
-        ActionCa.append(((7 / 10) - (mean(Ca) / mean(BestCa))) * 100)
-
-        dataframe6 = pd.DataFrame(Data1)
-        print(dataframe6)
-
-        # st.dataframe(df) # if need to display dataframe
-        Data2 = {'ActionpH': ActionpH,
-                 'ActionSoilMoisture': ActionSoilMoisture,
-                 'ActionN': ActionN,
-                 'ActionP': ActionP,
-                 'ActionEC': ActionEC,
-                 'ActionZn': ActionZn,
-                 'ActionS': ActionS,
-                 'ActionK': ActionK,
-                 'ActionMg': ActionMg,
-                 'ActionCa': ActionCa}
-        dataframe7 = pd.DataFrame(Data2)
-        st.markdown(printCostumTitleAndContenth4(f"""AcionPlan Plot{dict1['Plot'][key]}""",
-                                                 'The table below shows the amount of each nutrient that should be changed. The values are in percentages, and the number that is positive should be added as much as it is in the table, and the number that is negative should be reduced by the same amount.'),
-                    unsafe_allow_html=True)
-
-
-        st.write(dataframe7)
-        DataFrameAction = dataframe7
         dataframe1 = data_upload('data_gorwth_allplots.csv')
-        dataframe2 = dataframe1.query(f"""plot == {dict1['Plot'][key]}""")
+        dataframe2 = dataframe1.query(f"""plot == {sel_row[0]["Plot"]}""")
         print("DataFrame 1 : ")
         print(dataframe1)
 
         st.markdown(printCostumTitleAndContenth4('Bar Chat',
                                                  f"""The graph below shows the amount of growth metrics of the plot from week 5 to week 8 that is predicted, which is displayed separately by week."""),
                     unsafe_allow_html=True)
+        dict1 = dataframe.to_dict()
 
         dataframe10 = data_upload('data_pack31.csv')
-        dataframe11 = dataframe10.query(f"""plot == {dict1['Plot'][key]}""")
+        dataframe11 = dataframe10.query(f"""plot == {sel_row[0]["Plot"]}""")
         fig = px.bar(dataframe11, x='week ',
-                     y=['ActionlantHeight','ActionPreweight','ActionPreLongestLeaf','ActionPreLeafCount','ActionPreLeafArea',
+                     y=['ActionlantHeight', 'ActionPreweight', 'ActionPreLongestLeaf', 'ActionPreLeafCount',
+                        'ActionPreLeafArea',
                         'TarplantHeight', 'TarPreweight', 'TarPreLongestLeaf', 'TarPreLeafCount', 'TarPreLeafArea'],
                      barmode='group', height=400)
         # st.dataframe(df) # if need to display dataframe
         st.plotly_chart(fig)
 
-        plot = plot + 1
+
+
+
+
 
 
 
