@@ -56,7 +56,7 @@ with tab1:
    col1.image("Farm1.jpeg", width=600)
 
    col2.subheader("Details")
-   col2.markdown(printCostumTitleAndContenth4('Plot asn SubPlot' , 'No. Plot : 10 and No. Subplot: 10') , unsafe_allow_html=True)
+   col2.markdown(printCostumTitleAndContenth4('Plot and SubPlot' , 'No. Plot : 10 and No. Subplot: 10') , unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Location' , 'UPM') , unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Growth Cycle', 'Maturation'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Weekly schedule', ' growth period: 9 week '), unsafe_allow_html=True)
@@ -78,7 +78,7 @@ with tab2:
    col1.image("Farm2.jpeg", width=340)
 
    col2.subheader("Details")
-   col2.markdown(printCostumTitleAndContenth4('Plot asn SubPlot', 'No. Plot : 10 and No. Subplot: 10'),
+   col2.markdown(printCostumTitleAndContenth4('Plot and SubPlot', 'No. Plot : 10 and No. Subplot: 10'),
                  unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Location', 'UPM'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Growth Cycle', 'Maturation'), unsafe_allow_html=True)
@@ -102,7 +102,7 @@ with tab3:
 
    col2.subheader("Details")
 
-   col2.markdown(printCostumTitleAndContenth4('Plot asn SubPlot', 'No. Plot : 10 and No. Subplot: 10'),
+   col2.markdown(printCostumTitleAndContenth4('Plot and SubPlot', 'No. Plot : 10 and No. Subplot: 10'),
                  unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Location', 'UPM'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Growth Cycle', 'Maturation'), unsafe_allow_html=True)
@@ -124,7 +124,7 @@ with tab4:
 
    col2.subheader("Details")
 
-   col2.markdown(printCostumTitleAndContenth4('Plot asn SubPlot', 'No. Plot : 10 and No. Subplot: 10'),
+   col2.markdown(printCostumTitleAndContenth4('Plot and SubPlot', 'No. Plot : 10 and No. Subplot: 10'),
                  unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Location', 'UPM'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Growth Cycle', 'Maturation'), unsafe_allow_html=True)
