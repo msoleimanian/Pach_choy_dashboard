@@ -41,6 +41,8 @@ def printCostumTitleAndContenth3(title, context):
 st.markdown(printCostumTitleAndContentTitle('Pack Choy') , unsafe_allow_html=True)
 
 
+col5 , col6 = st.columns(2)
+
 col5.image('dash3.png' , width= 350)
 col6.markdown(printCostumTitleAndContenth3('Dashboard' , """Welcome to the Pak Choy Dashboard, your comprehensive tool for monitoring the growth and predicting the state of your pak choy plants. This dashboard is designed to provide you with valuable insights and actionable information to optimize the growth and yield of your pak choy crop."""),unsafe_allow_html=True)
 col6.markdown(printCostumTitleAndContenth3('' , """With the help of this dashboard, you will have access to real-time reports that track the vital parameters necessary for successful pak choy cultivation. By monitoring these factors, you can make informed decisions about irrigation, nutrient management, and environmental control to create an optimal growing environment for your pak choy plants.."""),unsafe_allow_html=True)
