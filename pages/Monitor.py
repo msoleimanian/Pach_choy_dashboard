@@ -133,7 +133,7 @@ with tab4:
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '45-50 days'), unsafe_allow_html=True)
 
    dataframe = data_upload('farm1.csv')
-   print(data_upload('data_Growth_Plot_Weight.csv'))
+   print(dataframe)
 
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
