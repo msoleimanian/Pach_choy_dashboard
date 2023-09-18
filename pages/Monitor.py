@@ -135,13 +135,21 @@ with tab4:
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '45-50 days'), unsafe_allow_html=True)
 
    dataframe = data_upload('farm11.csv')
-   st.write(dataframe)
 
-   fig = px.bar(dataframe, x='week',
-                y=['Prediction Yeild(Kg)', 'Actual Yeild(Kg)' , 'Goal Yeild(Kg)'] ,
-                height=400)
-   st.plotly_chart(fig)
+   st.line_chart(dataframe , x='week')
 
+   source = pd.melt(dataframe, id_vars=['model'])
+   chart = alt.Chart(source).mark_bar(strokeWidth=100).encode(
+      x=alt.X('variable:N', title="", scale=alt.Scale(paddingOuter=0.5)),
+      # paddingOuter - you can play with a space between 2 models
+      y='value:Q',
+      color='variable:N',
+      column=alt.Column('model:N', title="", spacing=0),
+      # spacing =0 removes space between columns, column for can and st
+   ).properties(width=300, height=300, ).configure_header(labelOrient='bottom').configure_view(
+      strokeOpacity=0)
+
+   st.altair_chart(chart)  # , use_container_width=True)
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
