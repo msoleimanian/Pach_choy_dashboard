@@ -9,6 +9,9 @@ from PIL import Image
 from matplotlib import pyplot as plt
 from pandas import date_range
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode
+warnings.filterwarnings("ignore")
+
+st.set_page_config(layout="wide")
 
 
 def data_upload(path):
