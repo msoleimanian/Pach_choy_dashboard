@@ -134,6 +134,7 @@ with tab4:
 
    dataframe = data_upload('farm11.csv')
 
+
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
