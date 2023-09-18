@@ -38,7 +38,7 @@ def printCostumTitleAndContenth3(title, context):
         <div class="container">
         </div>
         """
-st.markdown(printCostumTitleAndContentTitle('Pack Choy') , unsafe_allow_html=True)
+st.markdown(printCostumTitleAndContentTitle('Pak Choy') , unsafe_allow_html=True)
 
 
 col5 , col6 = st.columns(2)
