@@ -145,7 +145,7 @@ with tab4:
 
    st.line_chart(dataframe , x='week')
 
-   source = pd.melt(dataframe, id_vars=['Prediction Yeild(Kg)', 'Actual Yeild(Kg)' , 'Goal Yeild(Kg)'])
+   source = pd.melt(dataframe, id_vars=['week'])
    chart = alt.Chart(source).mark_bar(strokeWidth=100).encode(
       x=alt.X('variable:N', title="", scale=alt.Scale(paddingOuter=0.5)),
       # paddingOuter - you can play with a space between 2 models
