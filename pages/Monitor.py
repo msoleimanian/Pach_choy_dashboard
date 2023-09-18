@@ -141,7 +141,7 @@ with tab4:
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '45-50 days'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
 
-   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'asdasda asdasd ad asd ad asd '), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and forecasted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
    dataframe = data_upload('farm11.csv')
 
    st.line_chart(dataframe , x='week')
