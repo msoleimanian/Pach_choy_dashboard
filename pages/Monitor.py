@@ -69,7 +69,7 @@ with tab1:
 
    dataframe = data_upload('farm11.csv')
    st.line_chart(dataframe , x='week')
-   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients' , '') , unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients' , 'In the table below, the actual values of nutrients since the time of planting and its average in the last time are displayed, and the values of nutrients predicted in the last week are displayed, which will be at the time of harvest.') , unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
    st.write(dataframe)
@@ -96,7 +96,7 @@ with tab2:
 
    dataframe = data_upload('farm11.csv')
    st.line_chart(dataframe , x='week')
-   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', 'In the table below, the actual values of nutrients since the time of planting and its average in the last time are displayed, and the values of nutrients predicted in the last week are displayed, which will be at the time of harvest.'), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
    st.write(dataframe)
@@ -124,6 +124,8 @@ with tab3:
 
    dataframe = data_upload('farm11.csv')
    st.line_chart(dataframe , x='week')
+   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', 'In the table below, the actual values of nutrients since the time of planting and its average in the last time are displayed, and the values of nutrients predicted in the last week are displayed, which will be at the time of harvest.'), unsafe_allow_html=True)
+
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
    st.write(dataframe)
@@ -152,7 +154,7 @@ with tab4:
 
    st.line_chart(dataframe , x='week')
 
-   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', 'In the table below, the actual values of nutrients since the time of planting and its average in the last time are displayed, and the values of nutrients predicted in the last week are displayed, which will be at the time of harvest.'), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
    st.write(dataframe)
