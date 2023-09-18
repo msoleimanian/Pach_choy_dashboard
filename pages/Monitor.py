@@ -137,7 +137,7 @@ with tab4:
    dataframe = data_upload('farm11.csv')
    st.write(dataframe)
 
-   fig = px.bar(dataframe, x='week ',
+   fig = px.bar(dataframe, x='week',
                 y=['Prediction Yeild(Kg)', 'Actual Yeild(Kg)' , 'Goal Yeild(Kg)'] ,
                 height=400)
    # st.dataframe(df) # if need to display dataframe
