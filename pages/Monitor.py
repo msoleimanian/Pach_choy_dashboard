@@ -134,7 +134,7 @@ with tab4:
 
    dataframe = data_upload('farm11.csv')
    st.write(dataframe)
-   st.bar_chart(dataframe , x='week')
+   st.bar_chart(dataframe, x='week', y='Prediction Yeild(Kg)')
 
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
