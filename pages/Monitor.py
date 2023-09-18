@@ -151,8 +151,11 @@ with tab4:
 
    st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and predicted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
    dataframe = data_upload('farm11.csv')
-
    st.line_chart(dataframe , x='week')
+
+   dataframe = data_upload('Nutrients.csv')
+   st.line_chart(dataframe , x='week')
+
 
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', 'In the table below, the actual values of nutrients since the time of planting and its average in the last time are displayed, and the values of nutrients predicted in the last week are displayed, which will be at the time of harvest.'), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
