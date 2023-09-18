@@ -64,7 +64,9 @@ with tab1:
    col2.markdown(printCostumTitleAndContenth4('Weekly schedule', ' growth period: 9 week '), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContentext('elapsed time:  7 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '15-20 days'), unsafe_allow_html=True)
-
+   col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
+   dataframe = data_upload('farm11.csv')
+   st.line_chart(dataframe , x='week')
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients' , '') , unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
@@ -87,7 +89,9 @@ with tab2:
    col2.markdown(printCostumTitleAndContenth4('Weekly schedule', ' growth period: 8 week '), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContentext('elapsed time:  6 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '17-22 days'), unsafe_allow_html=True)
-
+   col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
+   dataframe = data_upload('farm11.csv')
+   st.line_chart(dataframe , x='week')
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
@@ -111,7 +115,9 @@ with tab3:
    col2.markdown(printCostumTitleAndContenth4('Weekly schedule', ' growth period: 10 week '), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContentext('elapsed time:  7 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '20-25 days'), unsafe_allow_html=True)
-
+   col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
+   dataframe = data_upload('farm11.csv')
+   st.line_chart(dataframe , x='week')
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
    st.write(dataframe)
@@ -133,6 +139,7 @@ with tab4:
    col2.markdown(printCostumTitleAndContenth4('Weekly schedule', ' growth period: 8 week '), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContentext('elapsed time:  3 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '45-50 days'), unsafe_allow_html=True)
+   col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
 
    dataframe = data_upload('farm11.csv')
 
