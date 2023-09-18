@@ -2,6 +2,8 @@ import july as july
 import numpy as np
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+from statistics import mean
 
 from PIL import Image
 from matplotlib import pyplot as plt
@@ -135,8 +137,11 @@ with tab4:
    dataframe = data_upload('farm11.csv')
    st.write(dataframe)
 
-   st.bar_chart(dataframe, x='week', y=['Prediction Yeild(Kg)','Actual Yeild(Kg)'])
-
+   fig = px.bar(dataframe, x='week ',
+                y=['Prediction Yeild(Kg)', 'Actual Yeild(Kg)' , 'Goal Yeild(Kg)'] ,
+                height=400)
+   # st.dataframe(df) # if need to display dataframe
+   st.plotly_chart(fig)
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
    dataframe = data_upload('farm 1.csv')
    print(dataframe)
