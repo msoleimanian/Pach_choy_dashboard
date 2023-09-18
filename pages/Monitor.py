@@ -65,6 +65,8 @@ with tab1:
    col2.markdown(printCostumTitleAndContentext('elapsed time:  7 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '15-20 days'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and predicted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
+
    dataframe = data_upload('farm11.csv')
    st.line_chart(dataframe , x='week')
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients' , '') , unsafe_allow_html=True)
@@ -90,6 +92,8 @@ with tab2:
    col2.markdown(printCostumTitleAndContentext('elapsed time:  6 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '17-22 days'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and predicted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
+
    dataframe = data_upload('farm11.csv')
    st.line_chart(dataframe , x='week')
    st.markdown(printCostumTitleAndContenth4('Average of the Nutrients', ''), unsafe_allow_html=True)
@@ -116,6 +120,8 @@ with tab3:
    col2.markdown(printCostumTitleAndContentext('elapsed time:  7 week'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '20-25 days'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and predicted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
+
    dataframe = data_upload('farm11.csv')
    st.line_chart(dataframe , x='week')
    dataframe = data_upload('farm 1.csv')
@@ -141,7 +147,7 @@ with tab4:
    col2.markdown(printCostumTitleAndContenth4('Time left until harvest', '45-50 days'), unsafe_allow_html=True)
    col2.markdown(printCostumTitleAndContenth4('Status of the Farm', 'Low Risk'), unsafe_allow_html=True)
 
-   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and forecasted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
+   st.markdown(printCostumTitleAndContenth4('Status of the Farm', 'In the chart below, the target and predicted and actual state are displayed for each week, which allows you to see the trend and the final value.'), unsafe_allow_html=True)
    dataframe = data_upload('farm11.csv')
 
    st.line_chart(dataframe , x='week')
