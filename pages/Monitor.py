@@ -138,7 +138,6 @@ with tab4:
    st.write(dataframe)
 
    fig = px.bar(dataframe, x='week',
-                y=['Prediction Yeild(Kg)', 'Actual Yeild(Kg)' , 'Goal Yeild(Kg)'] ,
                 height=400)
    # st.dataframe(df) # if need to display dataframe
    st.plotly_chart(fig)
