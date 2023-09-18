@@ -47,7 +47,7 @@ def printCostumTitleAndContentext( context):
         </div>
         """
 
-st.markdown(printCostumTitleAndContenth1('Pack Choy Farms ' , '') , unsafe_allow_html=True)
+st.markdown(printCostumTitleAndContenth1('Pak Choy Farms ' , '') , unsafe_allow_html=True)
 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Farm1", "Farm2", "Farm3", "Farm4"])
